@@ -6,18 +6,21 @@ using TicTacToe;
 string[] arr = { "", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 bool gameRunning = true;
 string player;
+string player2;
 Console.WriteLine("Welcome to my TicTacToe game!");
 Thread.Sleep(1000);
+Console.WriteLine("Who do you want to play as?");
+player = Console.ReadLine();
 
-MainGame(arr, "", ref gameRunning);
+MainGame(arr, player, ref gameRunning, "O");
 
 
-static void MainGame(string[] arr, string player, ref bool gameRunning)
+
+static void MainGame(string[] arr, string player, ref bool gameRunning, string player2)
 {
     while (gameRunning)
     {
-        Console.WriteLine("Who do you want to play as?");
-        player = Console.ReadLine();
+        
 
         Console.WriteLine($"You are playing as {player}");
         Console.WriteLine("Where do you want to play? 1-9");
@@ -27,7 +30,14 @@ static void MainGame(string[] arr, string player, ref bool gameRunning)
 
         arr[move] = player;
         GameBoardPrinter.PrintBoard(arr);
-        CheckWin(arr, "X", ref gameRunning);
+        CheckWin(arr, player, ref gameRunning);
+
+        Console.WriteLine($"Now is {player2}'s turn ");
+        moveInput = Console.ReadLine();
+        move = Int32.Parse(moveInput);
+        arr[move] = player2;
+        GameBoardPrinter.PrintBoard(arr);
+
 
 
 
@@ -43,7 +53,7 @@ switch (gameRunning == false)
         switch (finalChoice)
         {
             case "Y":
-                MainGame(arr, "", ref gameRunning);
+                MainGame(arr, "", ref gameRunning, "O");
                 break;
         }
         break;
@@ -101,6 +111,26 @@ static void CheckWin(string[] arr, string player, ref bool gameRunning)
         gameRunning = false;
     }
 }
+
+static void SwitchPlayer(ref string player, ref string player2)
+{
+    switch (player)
+    {
+        case "X":
+            player = player;
+            player2 = "O";
+            break;
+
+        case "O":
+            player = player;
+            player2 = "X";
+            break;
+
+        default:
+            break;
+    }
+}
+
 
 
 

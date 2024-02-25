@@ -12,3 +12,4 @@ C:\Users\musia\source\repos\TicTacToe\TicTacToe\obj\Debug\net8.0\refint\TicTacTo
 C:\Users\musia\source\repos\TicTacToe\TicTacToe\obj\Debug\net8.0\TicTacToe.pdb
 C:\Users\musia\source\repos\TicTacToe\TicTacToe\obj\Debug\net8.0\TicTacToe.genruntimeconfig.cache
 C:\Users\musia\source\repos\TicTacToe\TicTacToe\obj\Debug\net8.0\ref\TicTacToe.dll
+C:\Users\musia\source\repos\TicTacToe\TicTacToe\obj\Debug\net8.0\TicTacToe.sourcelink.json
